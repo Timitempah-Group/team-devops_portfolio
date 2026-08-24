@@ -20,12 +20,20 @@ docker run -d -p 8080:80 --name practice-webserver devops-practice-webserver
 ## Verification
 
 - `curl http://localhost:8080` returned the expected page content
-- Browser confirmed the page loads at `http://localhost:8080` (see screenshots/01-webserver-running.png)
+- Browser confirmed the page loads at `http://localhost:8080`
 - `docker ps` showed the container `Up` and, after adding a HEALTHCHECK,
-  `(healthy)` (see screenshots/02-container-healthy.png) — confirmed further with
+  `(healthy)` — confirmed further with
   `docker inspect --format='{{json .State.Health}}' practice-webserver`,
   which logged four consecutive successful checks (exit code 0) at
   30-second intervals
+
+## Screenshots
+
+![Web server running in browser](screenshots/01-webserver-running.png)
+*The custom page served by the nginx container, loaded at http://localhost:8080*
+
+![Container health check passing](screenshots/02-container-healthy.png)
+*docker ps showing the container status as (healthy) after the HEALTHCHECK instruction was added*
 
 ## Lifecycle practice
 
