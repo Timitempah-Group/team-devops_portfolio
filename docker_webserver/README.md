@@ -27,7 +27,7 @@ docker run -d -p 8080:80 --name practice-webserver devops-practice-webserver
   which logged four consecutive successful checks (exit code 0) at
   30-second intervals
 
-## Screenshots
+## Verification Evidence
 
 ![Web server running in browser](screenshots/01-webserver-running.png)
 *The custom page served by the nginx container, loaded at http://localhost:8080*
