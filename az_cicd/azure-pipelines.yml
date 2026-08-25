@@ -31,9 +31,7 @@ stages:
               command: 'buildAndPush'
               Dockerfile: 'az_cicd/Dockerfile'
               buildContext: 'az_cicd'
-              platform:
-                os: 'linux'
-                arch: 'amd64'
+              arguments: '--platform linux/amd64'
               tags: |
                 $(imageTag)
                 latest
