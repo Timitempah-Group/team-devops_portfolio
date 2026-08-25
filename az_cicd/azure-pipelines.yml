@@ -31,7 +31,7 @@ stages:
                 az_cicd
               docker push $(acrLoginServer)/$(imageName):$(imageTag)
               docker push $(acrLoginServer)/$(imageName):latest
-            displayName: 'Login, build and push - all in one step, same shell session'
+            displayName: 'Login, build and push - single step, same shell session'
             env:
               acrPassword: $(acrPassword)
 
