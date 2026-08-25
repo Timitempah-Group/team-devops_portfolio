@@ -15,6 +15,7 @@ variables:
   imageTag: '$(Build.BuildId)'
   webAppName: 'az-cicd-practice-v2'
   resourceGroup: 'rg-az-cicd-practice-v2'
+  DOCKER_BUILDKIT: '0'
 
 stages:
   - stage: Build
@@ -36,7 +37,9 @@ stages:
                 az_cicd
               docker push $(acrLoginServer)/$(imageName):$(imageTag)
               docker push $(acrLoginServer)/$(imageName):latest
-            displayName: 'Build and push with plain docker commands (no platform flag - agent is native amd64)'
+            displayName: 'Build and push using legacy Docker engine (BuildKit disabled)'
+            env:
+              DOCKER_BUILDKIT: '0'
 
   - stage: Deploy
     displayName: 'Deploy to App Service'
