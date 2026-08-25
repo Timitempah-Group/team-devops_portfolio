@@ -15,7 +15,6 @@ variables:
   imageTag: '$(Build.BuildId)'
   webAppName: 'az-cicd-practice-v2'
   resourceGroup: 'rg-az-cicd-practice-v2'
-  DOCKER_BUILDKIT: '0'
 
 stages:
   - stage: Build
@@ -24,22 +23,17 @@ stages:
       - job: BuildAndPush
         displayName: 'Build image and push to Container Registry'
         steps:
-          - task: Docker@2
-            displayName: 'Login to ACR'
-            inputs:
-              command: 'login'
-              containerRegistry: 'acr-connection'
-
           - script: |
+              echo "$(acrPassword)" | docker login $(acrLoginServer) -u $(acrUsername) --password-stdin
               docker build \
                 -t $(acrLoginServer)/$(imageName):$(imageTag) \
                 -t $(acrLoginServer)/$(imageName):latest \
                 az_cicd
               docker push $(acrLoginServer)/$(imageName):$(imageTag)
               docker push $(acrLoginServer)/$(imageName):latest
-            displayName: 'Build and push using legacy Docker engine (BuildKit disabled)'
+            displayName: 'Login, build and push - all in one step, same shell session'
             env:
-              DOCKER_BUILDKIT: '0'
+              acrPassword: $(acrPassword)
 
   - stage: Deploy
     displayName: 'Deploy to App Service'
