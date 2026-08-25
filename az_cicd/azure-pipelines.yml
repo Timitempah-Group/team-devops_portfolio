@@ -23,24 +23,20 @@ stages:
       - job: BuildAndPush
         displayName: 'Build image and push to Container Registry'
         steps:
-          - task: Docker@2
-            displayName: 'Login to Docker Hub'
+          - task: AzureCLI@2
+            displayName: 'Build and push with plain docker commands'
             inputs:
-              command: 'login'
-              containerRegistry: 'dockerhub-connection'
-
-          - task: Docker@2
-            displayName: 'Build and push Docker image'
-            inputs:
-              containerRegistry: 'acr-connection'
-              repository: '$(imageName)'
-              command: 'buildAndPush'
-              Dockerfile: 'az_cicd/Dockerfile'
-              buildContext: 'az_cicd'
-              arguments: '--platform linux/amd64'
-              tags: |
-                $(imageTag)
-                latest
+              azureSubscription: 'azure-subscription-connection'
+              scriptType: 'bash'
+              scriptLocation: 'inlineScript'
+              inlineScript: |
+                az acr login --name acrazcicdpractice25049
+                docker build --platform linux/amd64 \
+                  -t $(acrLoginServer)/$(imageName):$(imageTag) \
+                  -t $(acrLoginServer)/$(imageName):latest \
+                  az_cicd
+                docker push $(acrLoginServer)/$(imageName):$(imageTag)
+                docker push $(acrLoginServer)/$(imageName):latest
 
   - stage: Deploy
     displayName: 'Deploy to App Service'
