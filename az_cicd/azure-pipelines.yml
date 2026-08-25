@@ -30,13 +30,13 @@ stages:
               containerRegistry: 'acr-connection'
 
           - script: |
-              docker build --platform linux/amd64 \
+              docker build \
                 -t $(acrLoginServer)/$(imageName):$(imageTag) \
                 -t $(acrLoginServer)/$(imageName):latest \
                 az_cicd
               docker push $(acrLoginServer)/$(imageName):$(imageTag)
               docker push $(acrLoginServer)/$(imageName):latest
-            displayName: 'Build and push with plain docker commands'
+            displayName: 'Build and push with plain docker commands (no platform flag - agent is native amd64)'
 
   - stage: Deploy
     displayName: 'Deploy to App Service'
