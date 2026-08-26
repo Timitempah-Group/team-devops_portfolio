@@ -17,6 +17,9 @@ Senior Azure DevOps Engineer role requiring DevSecOps evidence.
   were rebuilt from scratch under a new resource group to add container
   vulnerability scanning with Trivy directly into the CI pipeline, running
   automatically after every image push and before deployment
+- **Dependabot:** GitHub-native dependency scanning configured at the repo root,
+  monitoring the `az_cicd/Dockerfile` base image weekly for available updates and
+  known vulnerabilities, independent of the Azure Pipelines infrastructure
 
 ## Commands used
 
@@ -48,6 +51,18 @@ sudo mv trivy /usr/local/bin/trivy
 trivy image --username $(acrUsername) --password $(acrPassword) --severity CRITICAL,HIGH,MEDIUM --format table $(acrLoginServer)/$(imageName):$(imageTag)
 ```
 
+### Dependabot config (.github/dependabot.yml)
+
+```
+version: 2
+updates:
+  - package-ecosystem: "docker"
+    directory: "/az_cicd"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+```
+
 ## Verification Evidence
 
 ![Manual deployment working](screenshots/02-webapp-live-browser-manual.png)
@@ -70,6 +85,9 @@ trivy image --username $(acrUsername) --password $(acrPassword) --severity CRITI
 
 ![Deploy stage succeeded after security retrofit](screenshots/08-deploy-success-new-infra.png)
 *Deploy to Azure App Service completing successfully on the new infrastructure, confirming the added Trivy step did not break the deployment*
+
+![Dependabot version update job ran successfully](screenshots/09-dependabot-version-update-job.png)
+*GitHub's Dependency graph confirming Dependabot correctly detected az_cicd/Dockerfile as a tracked manifest and successfully ran a version-update check against it, finding the base image already current*
 
 ## The real troubleshooting story
 
@@ -139,6 +157,29 @@ CI pipeline - query the vendor's release API at pipeline runtime instead, and be
 precise with pattern matching whenever multiple release assets could share
 overlapping substrings in their filenames.
 
+### Dependabot: alerts vs. version updates
+
+Setting up Dependabot surfaced a distinction worth understanding rather than
+assuming the two features are the same thing:
+
+- **Dependabot alerts** (enabled under repo Settings → Advanced Security) scan
+  for known CVEs in existing dependencies and surface them under the
+  Security tab. This came back clean immediately - 0 open alerts - since the
+  `nginx:alpine` base image had no known vulnerabilities at scan time.
+- **Dependabot version updates** are entirely separate, driven by the
+  `.github/dependabot.yml` config file rather than a repo setting. This is the
+  feature that actually reads the `directory` and `package-ecosystem` fields to
+  know what to check, and opens pull requests when a newer version exists. The
+  first run completed successfully within minutes of pushing the config,
+  visible under the repo's Insights → Dependency graph → Dependabot tab, with
+  "No PRs affected" since the current base image tag was already the latest
+  available - a clean result, not a failure.
+
+**Lesson:** enabling "Dependabot alerts" in repo settings does not by itself
+configure version-update checks; both the settings toggle and a correctly
+targeted `dependabot.yml` file are needed for full coverage, and they surface
+in two different places in the GitHub UI.
+
 ## Notes
 
 The original build (rg-az-cicd-practice / rg-az-cicd-practice-v2) used App
@@ -149,7 +190,8 @@ repeated redeploys during troubleshooting, producing a `QuotaExceeded` app state
 unrelated to actual traffic. B1 costs roughly $0.018/hour and avoided that
 failure mode entirely during the more iterative security work. ACR (Basic tier)
 bills continuously per day regardless of which App Service tier is paired with
-it.
+it. Dependabot itself runs entirely on GitHub's infrastructure and incurs no
+Azure cost, unaffected by teardown timing.
 
 ## Teardown
 
