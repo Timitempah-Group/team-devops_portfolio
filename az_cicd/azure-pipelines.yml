@@ -10,11 +10,11 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  acrLoginServer: 'acrazcicdpractice25049.azurecr.io'
+  acrLoginServer: 'acrazcicdsec13385.azurecr.io'
   imageName: 'az-cicd-practice'
   imageTag: '$(Build.BuildId)'
-  webAppName: 'az-cicd-practice-v2'
-  resourceGroup: 'rg-az-cicd-practice-v2'
+  webAppName: 'az-cicd-security-15230'
+  resourceGroup: 'rg-az-cicd-security'
 
 stages:
   - stage: Build
@@ -26,6 +26,7 @@ stages:
           - script: |
               echo "$(acrPassword)" | docker login $(acrLoginServer) -u $(acrUsername) --password-stdin
               docker build \
+                --platform linux/amd64 \
                 -t $(acrLoginServer)/$(imageName):$(imageTag) \
                 -t $(acrLoginServer)/$(imageName):latest \
                 az_cicd
@@ -45,6 +46,6 @@ stages:
           - task: AzureWebAppContainer@1
             displayName: 'Deploy to Azure App Service'
             inputs:
-              azureSubscription: 'azure-subscription-connection'
+              azureSubscription: 'azure-subscription-connection-security'
               appName: '$(webAppName)'
               containers: '$(acrLoginServer)/$(imageName):$(imageTag)'
