@@ -37,9 +37,13 @@ stages:
               acrPassword: $(acrPassword)
 
           - script: |
-              curl -sfL -o trivy.tar.gz "https://github.com/aquasecurity/trivy/releases/download/v0.54.1/trivy_0.54.1_Linux-64bit.tar.gz"
+              set -e
+              curl -L -o trivy.tar.gz "https://github.com/aquasecurity/trivy/releases/download/v0.54.1/trivy_0.54.1_Linux-64bit.tar.gz"
+              ls -la trivy.tar.gz
+              file trivy.tar.gz
               tar zxvf trivy.tar.gz trivy
               sudo mv trivy /usr/local/bin/trivy
+              trivy --version
               trivy image \
                 --username $(acrUsername) \
                 --password $(acrPassword) \
