@@ -1,4 +1,4 @@
-# team-devops_portfolio
+# team_devops-portfolio
 
 Six small, standalone DevOps practice tasks, each demonstrating a distinct discipline:
 containerisation, cloud CI/CD with security scanning, build automation, distributed
