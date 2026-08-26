@@ -1,4 +1,4 @@
-FROM acrazcicdpractice25049.azurecr.io/nginx:alpine
+FROM acrazcicdsec13385.azurecr.io/nginx:alpine
 
 COPY index.html /usr/share/nginx/html/index.html
 
