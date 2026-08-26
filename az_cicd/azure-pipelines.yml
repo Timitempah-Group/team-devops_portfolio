@@ -56,6 +56,14 @@ stages:
             env:
               acrPassword: $(acrPassword)
 
+          - script: |
+              npm install -g snyk
+              snyk auth $(snykToken)
+              snyk container test $(acrLoginServer)/$(imageName):$(imageTag) --file=az_cicd/Dockerfile || true
+            displayName: 'Snyk vulnerability scan (report only)'
+            env:
+              snykToken: $(snykToken)
+
   - stage: Deploy
     displayName: 'Deploy to App Service'
     dependsOn: Build
