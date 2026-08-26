@@ -36,6 +36,18 @@ stages:
             env:
               acrPassword: $(acrPassword)
 
+          - script: |
+              curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin v0.54.1
+              trivy image \
+                --username $(acrUsername) \
+                --password $(acrPassword) \
+                --severity CRITICAL,HIGH,MEDIUM \
+                --format table \
+                $(acrLoginServer)/$(imageName):$(imageTag)
+            displayName: 'Trivy vulnerability scan (report only)'
+            env:
+              acrPassword: $(acrPassword)
+
   - stage: Deploy
     displayName: 'Deploy to App Service'
     dependsOn: Build
