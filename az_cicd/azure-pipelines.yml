@@ -37,7 +37,7 @@ stages:
               acrPassword: $(acrPassword)
 
           - script: |
-              curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin v0.54.1
+              curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sudo sh -s -- -b /usr/local/bin v0.54.1
               trivy image \
                 --username $(acrUsername) \
                 --password $(acrPassword) \
