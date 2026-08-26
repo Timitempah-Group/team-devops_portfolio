@@ -38,7 +38,9 @@ stages:
 
           - script: |
               set -e
-              curl -L -o trivy.tar.gz "https://github.com/aquasecurity/trivy/releases/download/v0.54.1/trivy_0.54.1_Linux-64bit.tar.gz"
+              DOWNLOAD_URL=$(curl -s https://api.github.com/repos/aquasecurity/trivy/releases/latest | grep "browser_download_url" | grep "Linux-64bit.tar.gz" | cut -d '"' -f 4)
+              echo "Resolved download URL: $DOWNLOAD_URL"
+              curl -L -o trivy.tar.gz "$DOWNLOAD_URL"
               ls -la trivy.tar.gz
               file trivy.tar.gz
               tar zxvf trivy.tar.gz trivy
