@@ -20,6 +20,10 @@ Senior Azure DevOps Engineer role requiring DevSecOps evidence.
 - **Dependabot:** GitHub-native dependency scanning configured at the repo root,
   monitoring the `az_cicd/Dockerfile` base image weekly for available updates and
   known vulnerabilities, independent of the Azure Pipelines infrastructure
+- **Snyk:** container vulnerability scanning added as a third pipeline step,
+  authenticating with a personal API token and scanning the freshly pushed image
+  directly - genuinely surfaced three real CVEs in the base image with a clear
+  remediation path, rather than a clean/empty result
 
 ## Commands used
 
@@ -63,6 +67,14 @@ updates:
     open-pull-requests-limit: 5
 ```
 
+### Snyk pipeline step (added to azure-pipelines.yml)
+
+```
+npm install -g snyk
+snyk auth $(snykToken)
+snyk container test $(acrLoginServer)/$(imageName):$(imageTag) --file=az_cicd/Dockerfile || true
+```
+
 ## Verification Evidence
 
 ![Manual deployment working](screenshots/02-webapp-live-browser-manual.png)
@@ -88,6 +100,9 @@ updates:
 
 ![Dependabot version update job ran successfully](screenshots/09-dependabot-version-update-job.png)
 *GitHub's Dependency graph confirming Dependabot correctly detected az_cicd/Dockerfile as a tracked manifest and successfully ran a version-update check against it, finding the base image already current*
+
+![Snyk scan found real CVEs in the base image](screenshots/10-snyk-scan-vulnerability-found.png)
+*Snyk container scan authenticating successfully and identifying three low-severity CVEs (CVE-2026-14456, CVE-2026-14457, CVE-2026-54874) in openssl/libcrypto3, all traced to the nginx:alpine base image, with the fix version (3.5.8-r0) identified*
 
 ## The real troubleshooting story
 
@@ -180,6 +195,36 @@ configure version-update checks; both the settings toggle and a correctly
 targeted `dependabot.yml` file are needed for full coverage, and they surface
 in two different places in the GitHub UI.
 
+### Snyk: the one tool that actually found something
+
+Unlike Trivy and Dependabot, which both came back clean on this image, Snyk's
+container scan identified three real, named vulnerabilities:
+
+- `CVE-2026-14456`, `CVE-2026-14457`, and `CVE-2026-54874`, all low severity,
+  all in `openssl/libcrypto3` version `3.5.7-r0`
+- All three were traced via Snyk's dependency-path output directly to the
+  `nginx:alpine` base image itself, not to anything added in the Dockerfile
+- All three have an identified fix version (`3.5.8-r0`), meaning the practical
+  remediation is a base image bump, not an application-level change
+
+Snyk was installed via `npm install -g snyk` rather than a separate binary
+download, since npm is already present on the hosted Ubuntu agent - this avoided
+the entire class of installation problems hit with Trivy's install script.
+Authentication used `snyk auth $(snykToken)` with a personal API token (not the
+broader Organization API key, which is intended for org-management API calls
+rather than CI/CD scanning) stored as a secret pipeline variable, the same
+pattern used for the ACR password.
+
+The scan step was written with `|| true` appended, matching the report-only
+approach taken with Trivy: Snyk's CLI exits non-zero whenever it finds any
+vulnerability regardless of severity, so without this the pipeline would fail
+even on this genuinely low-risk finding.
+
+**Why Trivy and Dependabot missed what Snyk found:** most likely differences in
+each tool's vulnerability database freshness or coverage at the moment of
+scanning - a reasonable, realistic example of why security tooling in practice
+often layers multiple scanners rather than relying on just one.
+
 ## Notes
 
 The original build (rg-az-cicd-practice / rg-az-cicd-practice-v2) used App
@@ -190,8 +235,16 @@ repeated redeploys during troubleshooting, producing a `QuotaExceeded` app state
 unrelated to actual traffic. B1 costs roughly $0.018/hour and avoided that
 failure mode entirely during the more iterative security work. ACR (Basic tier)
 bills continuously per day regardless of which App Service tier is paired with
-it. Dependabot itself runs entirely on GitHub's infrastructure and incurs no
-Azure cost, unaffected by teardown timing.
+it. Dependabot and Snyk both run independently of Azure - Dependabot entirely on
+GitHub's infrastructure, and Snyk via its free-tier hosted API - so neither is
+affected by Azure teardown timing.
+
+All three named security tools from the target job description (Trivy,
+Dependabot, Snyk) are now genuinely wired into this pipeline and repo, each with
+verified working evidence above. AppCheck was consciously excluded as an honest
+gap - its enterprise, sales-led pricing model (~£375/month, not available via
+Azure Marketplace or Azure credit) made it impractical to demonstrate hands-on
+within this project's scope.
 
 ## Teardown
 
