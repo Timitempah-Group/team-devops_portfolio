@@ -1,9 +1,9 @@
 # Azure CI/CD Pipeline
 
 An automated CI/CD pipeline using Azure Pipelines, Azure Container Registry, and
-Azure App Service - practice for the core Azure DevOps toolchain, later retrofitted
-with security scanning (Trivy, Dependabot, Snyk) to close specific gaps against a
-Senior Azure DevOps Engineer role requiring DevSecOps evidence.
+Azure App Service - practice for the core Azure DevOps toolchain, later extended
+with integrated security scanning (Trivy, Dependabot, Snyk) to demonstrate a
+DevSecOps-aware CI/CD pipeline.
 
 ## What was built
 
@@ -239,12 +239,9 @@ it. Dependabot and Snyk both run independently of Azure - Dependabot entirely on
 GitHub's infrastructure, and Snyk via its free-tier hosted API - so neither is
 affected by Azure teardown timing.
 
-All three named security tools from the target job description (Trivy,
-Dependabot, Snyk) are now genuinely wired into this pipeline and repo, each with
-verified working evidence above. AppCheck was consciously excluded as an honest
-gap - its enterprise, sales-led pricing model (~£375/month, not available via
-Azure Marketplace or Azure credit) made it impractical to demonstrate hands-on
-within this project's scope.
+Trivy, Dependabot, and Snyk are all genuinely wired into this pipeline and repo,
+each with verified working evidence above, demonstrating layered container and
+dependency scanning across build, registry, and source-control levels.
 
 ## Teardown
 

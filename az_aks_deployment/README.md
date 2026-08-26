@@ -1,9 +1,9 @@
 # Azure Kubernetes Service (AKS) Deployment
 
 A genuine Azure Kubernetes Service cluster with a containerised nginx workload
-deployed and exposed publicly - built to close a specific gap: the CV
-previously claimed AKS migration experience ("directed an AKS migration") with
-no hands-on deployment evidence anywhere in the portfolio to back it up.
+deployed and exposed publicly - hands-on evidence of AKS cluster provisioning,
+workload deployment, and Kubernetes Service networking on real Azure
+infrastructure.
 
 ## What was built
 
@@ -58,12 +58,10 @@ curl http://51.143.227.255
 
 **Two resource providers needed registration on this fresh subscription.**
 `az aks create` initially failed with `(MissingSubscriptionRegistration)` for
-`Microsoft.ContainerService` - the same class of issue hit earlier in this
-portfolio with `Microsoft.Storage`. Fixed by registering it explicitly
+`Microsoft.ContainerService`. Fixed by registering it explicitly
 (`az provider register --namespace Microsoft.ContainerService`), and
 proactively registered `Microsoft.Compute` and `Microsoft.Network` at the same
-time, since AKS depends on both and hitting this error three times in a row on
-one task would have been avoidable.
+time, since AKS depends on both.
 
 **The originally planned VM size (Standard_B2s) was not available in this
 subscription's region.** Azure returned a clear `BadRequest` explaining the
@@ -73,14 +71,13 @@ only current-generation D-series and specialty SKUs. Rather than guess,
 `Standard_D2ns_v6` (Intel-based, 2 vCPU) was chosen from the allowed list as
 the smallest practical option; an Arm-based alternative (`Standard_D2ps_v6`)
 was considered but avoided to sidestep any container architecture-compatibility
-questions given time constraints on this task.
+questions.
 
-**Lesson (consistent with the earlier Storage and Function App tasks):** a
-brand-new Azure subscription cannot be assumed to have either the resource
-providers or the VM size availability of an established one. Checking
+**Lesson:** a brand-new Azure subscription cannot be assumed to have either the
+resource providers or the VM size availability of an established one. Checking
 provider registration state and available VM sizes proactively, rather than
-assuming a command will simply work, would save a retry cycle on every future
-task using new infrastructure.
+assuming a command will simply work, saves a retry cycle on any task involving
+new infrastructure.
 
 ## Notes
 

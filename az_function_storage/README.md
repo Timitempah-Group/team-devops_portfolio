@@ -1,10 +1,9 @@
 # Azure Function + Storage Account
 
 An HTTP-triggered Azure Function (Python, Consumption plan) that writes a
-timestamped record to Azure Blob Storage on every request - built to close a
-specific gap: no hands-on Azure Functions or Storage Account evidence existed
-anywhere in the portfolio prior to this task, despite both being commonly
-expected in Azure DevOps/Platform Engineer roles.
+timestamped record to Azure Blob Storage on every request - hands-on evidence
+of building and wiring together a serverless Function App and a Storage
+Account on Azure.
 
 ## What was built
 
