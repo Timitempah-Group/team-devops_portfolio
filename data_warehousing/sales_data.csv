@@ -1,0 +1,501 @@
+order_id,product,region,quantity,unit_price,order_date
+1,USB Hub,West,20,759.01,2026-02-04
+2,Headset,East,18,931.73,2026-07-14
+3,Docking Station,North,3,1097.71,2026-02-16
+4,Webcam,East,14,536.47,2026-01-03
+5,Keyboard,North,16,826.35,2026-07-06
+6,Webcam,West,14,747.92,2026-11-11
+7,Docking Station,South,17,882.09,2026-03-04
+8,Mouse,East,19,41.93,2026-04-13
+9,Laptop,North,18,209.38,2026-09-20
+10,Monitor,North,10,380.9,2026-04-20
+11,Laptop,East,12,1047.09,2026-01-17
+12,Docking Station,East,6,874.58,2026-08-27
+13,Docking Station,West,1,1077.54,2026-02-17
+14,Docking Station,North,16,468.66,2026-09-05
+15,Laptop,West,13,631.49,2026-11-09
+16,USB Hub,North,15,187.11,2026-12-01
+17,Monitor,South,14,987.38,2026-08-09
+18,Headset,East,18,808.21,2026-04-16
+19,Webcam,West,18,249.34,2026-07-20
+20,Monitor,West,5,939.39,2026-01-06
+21,Mouse,South,5,892.43,2026-03-06
+22,Headset,East,4,585.03,2026-09-05
+23,Webcam,North,10,1178.03,2026-11-08
+24,Headset,West,14,1013.72,2026-08-07
+25,Monitor,South,9,887.11,2026-06-28
+26,Laptop,North,7,261.85,2026-10-06
+27,USB Hub,North,14,1044.6,2026-05-11
+28,Mouse,West,1,1134.37,2026-01-17
+29,Headset,North,19,873.85,2026-11-08
+30,USB Hub,West,8,85.42,2026-09-04
+31,Keyboard,North,19,773.66,2026-03-15
+32,Docking Station,South,12,841.03,2026-11-14
+33,Keyboard,West,7,432.52,2026-09-22
+34,Webcam,South,10,51.64,2026-07-03
+35,Monitor,West,3,529.27,2026-12-03
+36,Webcam,South,4,735.31,2026-03-12
+37,Mouse,South,1,536.05,2026-11-14
+38,Mouse,West,2,232.49,2026-09-23
+39,Keyboard,West,11,312.74,2026-08-12
+40,Docking Station,South,1,728.78,2026-05-05
+41,USB Hub,West,8,813.57,2026-07-01
+42,Keyboard,South,5,817.47,2026-07-27
+43,Keyboard,West,8,854.53,2026-10-23
+44,USB Hub,East,14,606.36,2026-11-14
+45,Docking Station,East,20,471.66,2026-06-09
+46,Keyboard,East,13,604.4,2026-08-11
+47,Docking Station,West,16,198.95,2026-10-02
+48,Docking Station,South,5,863.56,2026-07-08
+49,Laptop,East,13,559.84,2026-06-18
+50,Keyboard,North,19,665.8,2026-12-06
+51,Keyboard,North,7,200.77,2026-03-27
+52,Keyboard,South,14,419.46,2026-12-23
+53,Docking Station,North,20,434.74,2026-06-16
+54,Docking Station,West,19,318.72,2026-10-10
+55,Monitor,South,9,787.45,2026-04-21
+56,Laptop,West,11,31.84,2026-01-03
+57,Laptop,West,6,989.26,2026-05-21
+58,Laptop,East,11,290.59,2026-06-04
+59,Keyboard,South,10,590.66,2026-03-06
+60,Headset,South,4,637.04,2026-02-05
+61,Mouse,North,5,142.92,2026-02-02
+62,Webcam,South,4,141.75,2026-09-03
+63,Laptop,East,20,949.98,2026-05-02
+64,Headset,West,10,981.65,2026-11-24
+65,Docking Station,South,10,246.71,2026-01-15
+66,Laptop,East,10,555.66,2026-08-01
+67,Monitor,West,16,549.03,2026-05-22
+68,Docking Station,West,19,1032.25,2026-07-25
+69,Mouse,West,10,1136.03,2026-06-23
+70,Monitor,West,16,354.68,2026-08-08
+71,Monitor,West,4,1192.25,2026-03-24
+72,Keyboard,South,14,240.66,2026-01-06
+73,Monitor,South,13,650.38,2026-08-16
+74,Keyboard,South,20,302.0,2026-11-08
+75,Docking Station,West,1,1199.98,2026-09-02
+76,Headset,South,14,724.95,2026-10-07
+77,Docking Station,West,6,1090.52,2026-11-21
+78,Docking Station,North,9,1068.97,2026-09-17
+79,Webcam,North,6,818.18,2026-03-04
+80,Docking Station,South,19,818.76,2026-11-09
+81,Headset,North,3,67.87,2026-06-22
+82,Docking Station,South,1,283.79,2026-01-11
+83,Webcam,North,14,407.33,2026-08-21
+84,USB Hub,South,20,1021.84,2026-07-27
+85,Webcam,West,14,607.38,2026-08-04
+86,Mouse,West,4,954.19,2026-12-23
+87,Webcam,West,15,591.71,2026-10-14
+88,Mouse,West,12,846.4,2026-06-11
+89,Webcam,South,8,624.71,2026-06-27
+90,Laptop,East,5,1070.98,2026-11-14
+91,Keyboard,East,1,702.21,2026-12-21
+92,Keyboard,North,2,485.65,2026-05-01
+93,USB Hub,North,10,975.89,2026-10-28
+94,Laptop,East,8,514.13,2026-12-26
+95,Laptop,South,18,780.92,2026-01-10
+96,Laptop,North,6,422.13,2026-07-28
+97,Laptop,West,8,1002.78,2026-10-01
+98,Headset,North,16,731.92,2026-03-06
+99,Docking Station,West,9,599.81,2026-08-01
+100,USB Hub,East,19,897.52,2026-11-21
+101,Laptop,East,4,937.04,2026-05-06
+102,Docking Station,East,16,1130.89,2026-05-11
+103,Mouse,West,20,1004.5,2026-05-25
+104,USB Hub,South,17,32.42,2026-06-25
+105,Keyboard,West,7,745.27,2026-09-09
+106,Mouse,North,10,63.39,2026-01-28
+107,Mouse,West,1,797.44,2026-08-01
+108,Laptop,East,2,1003.34,2026-11-15
+109,Mouse,North,17,291.9,2026-03-23
+110,Headset,North,16,1001.6,2026-11-20
+111,Laptop,South,11,999.46,2026-02-22
+112,Webcam,South,3,105.49,2026-10-14
+113,Monitor,West,7,465.88,2026-01-26
+114,Webcam,North,15,1162.63,2026-06-22
+115,Keyboard,West,9,104.42,2026-04-16
+116,Docking Station,East,20,669.68,2026-05-23
+117,Laptop,West,4,435.75,2026-07-05
+118,Webcam,East,3,290.97,2026-01-06
+119,Keyboard,South,6,418.26,2026-05-27
+120,Monitor,East,9,771.89,2026-05-13
+121,Mouse,West,11,24.88,2026-08-27
+122,Headset,West,20,607.48,2026-04-15
+123,Webcam,South,11,443.96,2026-01-05
+124,Mouse,East,19,66.42,2026-08-20
+125,Webcam,North,17,364.43,2026-11-09
+126,Keyboard,North,14,909.66,2026-09-24
+127,Keyboard,North,6,240.14,2026-06-06
+128,Keyboard,North,18,593.93,2026-09-13
+129,Mouse,West,12,870.72,2026-09-01
+130,Mouse,South,6,387.56,2026-04-18
+131,Webcam,South,8,433.06,2026-01-21
+132,Docking Station,North,8,904.36,2026-04-21
+133,Webcam,West,15,1103.17,2026-07-05
+134,USB Hub,West,8,81.73,2026-10-12
+135,Keyboard,West,1,232.61,2026-07-16
+136,Keyboard,East,7,255.51,2026-12-22
+137,USB Hub,West,17,233.87,2026-03-05
+138,Keyboard,North,17,1086.65,2026-11-09
+139,Headset,West,16,127.9,2026-10-14
+140,Headset,North,13,261.46,2026-01-23
+141,USB Hub,East,4,826.13,2026-08-07
+142,Laptop,North,15,33.76,2026-07-26
+143,Laptop,East,9,411.19,2026-10-24
+144,Laptop,East,13,1009.23,2026-10-24
+145,Keyboard,West,15,935.37,2026-04-18
+146,Keyboard,North,11,260.98,2026-01-14
+147,Mouse,West,19,117.05,2026-04-15
+148,Keyboard,North,20,552.27,2026-05-13
+149,USB Hub,South,6,390.69,2026-08-16
+150,Monitor,North,7,350.47,2026-05-02
+151,Webcam,East,12,85.57,2026-06-28
+152,USB Hub,East,18,137.94,2026-06-18
+153,Laptop,West,18,170.86,2026-07-14
+154,Docking Station,North,5,654.14,2026-03-08
+155,Webcam,West,9,911.14,2026-10-21
+156,Keyboard,East,6,241.37,2026-08-01
+157,Webcam,East,17,174.48,2026-04-17
+158,Mouse,East,15,627.36,2026-07-28
+159,USB Hub,East,5,804.6,2026-02-23
+160,Webcam,North,14,509.34,2026-08-28
+161,Headset,South,3,235.12,2026-10-17
+162,Laptop,South,9,631.22,2026-05-25
+163,Webcam,South,19,861.77,2026-12-19
+164,USB Hub,West,8,344.57,2026-11-08
+165,Docking Station,East,6,816.43,2026-10-08
+166,USB Hub,North,2,728.33,2026-12-21
+167,Headset,East,14,599.8,2026-07-02
+168,Mouse,West,19,116.01,2026-05-04
+169,Keyboard,East,6,672.35,2026-07-13
+170,USB Hub,North,17,992.33,2026-10-16
+171,Mouse,South,3,719.75,2026-11-05
+172,Keyboard,South,13,1032.47,2026-07-19
+173,Keyboard,South,5,761.22,2026-03-25
+174,Headset,North,13,535.47,2026-03-03
+175,Webcam,South,14,122.05,2026-02-28
+176,Keyboard,West,17,583.08,2026-05-20
+177,USB Hub,West,20,661.71,2026-04-26
+178,Headset,West,18,433.11,2026-11-10
+179,Headset,East,17,519.25,2026-01-21
+180,Webcam,North,18,797.68,2026-03-08
+181,Monitor,North,18,930.06,2026-12-18
+182,Laptop,West,16,64.49,2026-09-06
+183,Laptop,South,15,362.32,2026-11-21
+184,Webcam,East,14,302.85,2026-12-11
+185,Docking Station,North,12,673.93,2026-08-10
+186,USB Hub,East,4,221.3,2026-04-10
+187,Headset,West,4,1163.44,2026-08-17
+188,Laptop,South,12,863.21,2026-04-28
+189,Keyboard,South,6,964.97,2026-01-15
+190,Monitor,South,14,251.26,2026-04-01
+191,Headset,West,10,927.44,2026-05-15
+192,Monitor,East,6,1088.11,2026-07-17
+193,Webcam,East,13,48.03,2026-05-23
+194,Keyboard,South,1,948.36,2026-03-11
+195,Monitor,East,9,709.75,2026-06-01
+196,USB Hub,North,17,495.42,2026-06-11
+197,Headset,South,3,544.4,2026-01-10
+198,Keyboard,East,10,126.13,2026-09-09
+199,Laptop,West,1,713.12,2026-05-24
+200,USB Hub,North,2,242.32,2026-10-16
+201,Mouse,North,3,57.98,2026-04-15
+202,Monitor,West,14,1128.76,2026-06-28
+203,Laptop,South,6,514.55,2026-07-08
+204,Keyboard,West,1,622.16,2026-06-19
+205,USB Hub,North,15,846.21,2026-01-10
+206,Webcam,South,6,205.33,2026-07-14
+207,Docking Station,North,20,1194.04,2026-10-01
+208,Keyboard,South,17,509.19,2026-09-14
+209,Docking Station,North,10,659.63,2026-05-04
+210,Webcam,East,5,640.71,2026-01-15
+211,Monitor,South,16,507.3,2026-02-02
+212,Headset,South,18,237.3,2026-11-07
+213,Webcam,East,9,216.56,2026-04-11
+214,Docking Station,North,4,780.33,2026-10-28
+215,Mouse,East,18,120.03,2026-02-19
+216,Docking Station,East,17,20.68,2026-01-09
+217,USB Hub,North,10,262.42,2026-03-27
+218,Headset,West,4,444.52,2026-06-09
+219,USB Hub,South,5,598.99,2026-08-24
+220,Mouse,East,14,1195.17,2026-02-21
+221,Keyboard,South,17,1199.59,2026-10-28
+222,Laptop,West,4,423.11,2026-06-24
+223,USB Hub,West,12,293.74,2026-12-02
+224,Headset,East,17,1044.44,2026-03-02
+225,USB Hub,South,1,471.79,2026-01-09
+226,Mouse,East,12,328.92,2026-01-18
+227,Docking Station,West,8,192.32,2026-01-15
+228,Laptop,East,6,261.21,2026-11-10
+229,Keyboard,North,5,381.77,2026-05-20
+230,Webcam,North,15,64.61,2026-04-03
+231,Laptop,East,13,1087.56,2026-06-11
+232,Laptop,West,3,890.58,2026-06-25
+233,Monitor,South,1,566.32,2026-03-10
+234,Webcam,East,6,1005.32,2026-12-03
+235,Webcam,East,13,1144.11,2026-05-21
+236,Headset,West,3,254.24,2026-07-09
+237,Mouse,West,15,943.01,2026-11-17
+238,Laptop,South,17,925.92,2026-12-21
+239,Webcam,West,13,302.76,2026-05-27
+240,Mouse,East,9,20.16,2026-12-27
+241,Mouse,East,9,100.93,2026-01-06
+242,Headset,North,4,852.22,2026-08-24
+243,Mouse,North,1,996.27,2026-09-20
+244,USB Hub,East,15,246.08,2026-12-24
+245,Mouse,East,19,448.13,2026-12-07
+246,Headset,East,1,953.13,2026-10-04
+247,Webcam,North,20,982.93,2026-04-17
+248,Webcam,West,17,933.47,2026-12-02
+249,Headset,West,17,856.84,2026-08-08
+250,Headset,South,3,1104.08,2026-12-07
+251,Mouse,West,6,15.84,2026-10-28
+252,Webcam,South,5,289.17,2026-09-26
+253,Monitor,South,17,785.86,2026-02-25
+254,Docking Station,West,4,782.61,2026-10-09
+255,Keyboard,South,4,1003.35,2026-12-05
+256,Headset,East,12,812.94,2026-02-21
+257,Webcam,South,13,207.3,2026-04-18
+258,Laptop,West,5,762.98,2026-08-27
+259,Mouse,South,1,170.1,2026-09-13
+260,Headset,South,2,881.91,2026-08-17
+261,Laptop,East,18,592.27,2026-05-24
+262,Keyboard,East,18,1154.6,2026-06-07
+263,Keyboard,South,20,274.59,2026-04-12
+264,Laptop,North,18,668.11,2026-04-25
+265,Webcam,South,19,813.15,2026-12-11
+266,Keyboard,North,12,406.44,2026-04-09
+267,Headset,North,16,223.9,2026-02-18
+268,Monitor,South,3,449.62,2026-06-08
+269,Mouse,West,16,1057.32,2026-12-02
+270,Laptop,East,18,390.37,2026-09-18
+271,Keyboard,East,2,157.11,2026-12-11
+272,Headset,North,19,289.68,2026-06-25
+273,USB Hub,South,2,923.76,2026-10-19
+274,Laptop,East,5,547.86,2026-07-14
+275,Keyboard,South,1,293.0,2026-08-15
+276,Laptop,West,12,36.26,2026-02-13
+277,Keyboard,North,13,456.86,2026-09-13
+278,Mouse,East,9,363.91,2026-02-17
+279,Docking Station,North,4,507.49,2026-08-26
+280,Headset,North,3,355.2,2026-10-05
+281,Keyboard,South,9,1132.75,2026-11-19
+282,USB Hub,West,8,252.94,2026-02-13
+283,Mouse,East,19,317.98,2026-12-24
+284,Webcam,West,2,902.86,2026-01-17
+285,Docking Station,South,11,894.23,2026-07-25
+286,Monitor,South,6,246.45,2026-05-28
+287,Monitor,West,4,179.07,2026-03-01
+288,Headset,North,6,1017.3,2026-08-05
+289,Monitor,East,20,623.04,2026-09-20
+290,Headset,North,5,231.57,2026-07-21
+291,Docking Station,West,3,790.65,2026-08-19
+292,Keyboard,East,8,568.85,2026-03-22
+293,Webcam,East,16,1124.17,2026-02-26
+294,Monitor,South,14,482.24,2026-06-01
+295,Laptop,East,19,807.54,2026-03-27
+296,Webcam,East,3,870.29,2026-06-28
+297,Mouse,South,7,1191.92,2026-10-07
+298,Mouse,South,17,656.79,2026-09-02
+299,Headset,South,1,1098.39,2026-09-01
+300,Docking Station,East,20,122.41,2026-07-02
+301,Monitor,East,2,775.52,2026-07-25
+302,Headset,West,8,981.66,2026-08-10
+303,Webcam,North,6,131.02,2026-08-09
+304,Mouse,South,7,175.61,2026-04-23
+305,Keyboard,East,3,260.76,2026-01-04
+306,Mouse,South,7,936.08,2026-08-18
+307,USB Hub,West,5,576.4,2026-09-10
+308,Headset,South,19,690.74,2026-05-09
+309,Keyboard,South,15,993.09,2026-02-15
+310,Docking Station,West,10,394.77,2026-02-09
+311,Mouse,East,14,292.87,2026-10-08
+312,Mouse,East,19,265.64,2026-08-13
+313,Monitor,East,15,269.91,2026-02-23
+314,Keyboard,North,11,269.41,2026-02-28
+315,Mouse,South,16,758.74,2026-09-11
+316,Keyboard,South,1,1085.12,2026-06-07
+317,Webcam,South,10,312.34,2026-03-03
+318,Docking Station,West,4,1022.0,2026-01-09
+319,Headset,South,8,308.69,2026-02-08
+320,Docking Station,West,7,321.03,2026-08-17
+321,Keyboard,North,11,974.33,2026-12-24
+322,Keyboard,South,19,228.58,2026-11-24
+323,Headset,North,11,132.63,2026-08-04
+324,Webcam,East,13,758.36,2026-10-06
+325,Monitor,East,15,26.49,2026-07-02
+326,Laptop,East,15,305.97,2026-06-22
+327,Headset,East,20,1188.75,2026-06-21
+328,Keyboard,West,16,1116.75,2026-04-02
+329,Laptop,South,18,1162.0,2026-10-09
+330,USB Hub,East,12,589.22,2026-11-13
+331,USB Hub,North,13,886.26,2026-07-24
+332,Monitor,East,15,970.87,2026-09-25
+333,Laptop,North,10,834.54,2026-09-11
+334,Laptop,North,3,413.36,2026-02-28
+335,Webcam,West,3,216.32,2026-04-09
+336,Monitor,East,3,705.17,2026-05-17
+337,Docking Station,South,9,199.52,2026-07-24
+338,Docking Station,East,14,708.81,2026-05-21
+339,Laptop,North,12,966.53,2026-01-20
+340,Headset,West,2,829.22,2026-09-17
+341,Headset,West,9,160.25,2026-05-07
+342,Keyboard,South,17,979.53,2026-05-13
+343,Mouse,West,12,1192.85,2026-10-23
+344,Monitor,East,7,708.3,2026-01-03
+345,Monitor,North,3,253.87,2026-11-05
+346,Monitor,East,8,338.32,2026-10-16
+347,Laptop,East,19,506.2,2026-02-08
+348,Headset,West,1,891.36,2026-09-09
+349,Keyboard,South,7,1182.92,2026-04-10
+350,Mouse,West,16,409.02,2026-02-16
+351,USB Hub,South,15,504.52,2026-11-20
+352,Docking Station,North,4,766.41,2026-04-25
+353,Docking Station,East,1,839.45,2026-10-13
+354,Monitor,East,16,365.43,2026-03-06
+355,Monitor,West,8,268.58,2026-12-14
+356,Keyboard,West,14,1033.86,2026-01-03
+357,Docking Station,West,17,303.78,2026-01-23
+358,Webcam,East,10,1033.87,2026-01-04
+359,Keyboard,West,15,265.01,2026-01-26
+360,Webcam,West,17,147.48,2026-05-15
+361,Webcam,East,5,155.34,2026-01-13
+362,Docking Station,East,17,348.38,2026-08-11
+363,Keyboard,West,19,767.17,2026-09-18
+364,Mouse,North,17,618.34,2026-11-19
+365,Laptop,North,11,1079.37,2026-01-07
+366,Headset,West,17,855.47,2026-02-23
+367,Keyboard,West,1,149.52,2026-06-10
+368,Laptop,West,3,907.84,2026-08-11
+369,USB Hub,West,5,906.05,2026-02-20
+370,Docking Station,North,9,231.56,2026-11-08
+371,Keyboard,West,6,731.39,2026-03-18
+372,Laptop,South,10,50.77,2026-01-27
+373,Keyboard,East,6,1126.55,2026-09-28
+374,Webcam,North,14,985.54,2026-04-21
+375,Keyboard,South,16,95.13,2026-09-08
+376,Monitor,North,19,469.25,2026-07-19
+377,Monitor,South,16,892.45,2026-08-08
+378,Mouse,South,10,699.38,2026-08-25
+379,Docking Station,North,9,213.03,2026-06-03
+380,Headset,North,10,901.41,2026-02-20
+381,Keyboard,South,5,865.32,2026-02-15
+382,Keyboard,North,18,323.19,2026-07-25
+383,Docking Station,North,7,26.61,2026-07-20
+384,Webcam,East,17,349.77,2026-03-22
+385,Monitor,South,13,942.72,2026-06-15
+386,Webcam,South,13,633.2,2026-12-07
+387,Docking Station,South,15,415.28,2026-02-16
+388,USB Hub,South,7,220.62,2026-12-13
+389,Docking Station,North,6,287.5,2026-08-08
+390,Monitor,West,4,967.66,2026-11-21
+391,Laptop,West,19,72.85,2026-07-08
+392,Monitor,West,9,143.57,2026-01-21
+393,Docking Station,West,15,1068.09,2026-06-16
+394,Keyboard,South,6,987.98,2026-06-17
+395,Headset,West,7,787.39,2026-10-28
+396,Laptop,East,3,630.77,2026-10-19
+397,USB Hub,West,7,303.58,2026-09-03
+398,Docking Station,East,1,305.34,2026-12-26
+399,Docking Station,North,11,235.75,2026-05-11
+400,Headset,West,5,65.9,2026-11-23
+401,Webcam,West,4,706.69,2026-06-09
+402,Keyboard,West,7,518.47,2026-04-23
+403,Mouse,West,8,1170.28,2026-03-12
+404,Webcam,East,7,29.08,2026-06-03
+405,Keyboard,West,9,1011.09,2026-09-23
+406,Webcam,West,9,209.52,2026-07-11
+407,Monitor,South,2,1034.01,2026-03-20
+408,Webcam,West,18,78.9,2026-09-27
+409,Mouse,West,19,783.1,2026-02-17
+410,Docking Station,East,2,309.93,2026-07-08
+411,Monitor,South,18,807.72,2026-01-11
+412,Docking Station,East,2,377.72,2026-01-05
+413,Keyboard,North,12,1085.94,2026-03-04
+414,Mouse,West,6,694.35,2026-10-11
+415,Headset,North,3,979.2,2026-12-19
+416,Docking Station,West,5,1199.77,2026-01-07
+417,Headset,North,1,499.68,2026-01-06
+418,Docking Station,East,8,1054.54,2026-11-15
+419,Keyboard,West,20,547.08,2026-04-16
+420,Mouse,South,4,878.43,2026-03-18
+421,Docking Station,West,18,339.58,2026-09-15
+422,Laptop,East,7,938.75,2026-09-23
+423,Webcam,North,9,537.81,2026-05-19
+424,Laptop,South,18,1033.56,2026-08-22
+425,USB Hub,North,9,501.25,2026-05-27
+426,Headset,East,12,903.15,2026-07-21
+427,Monitor,North,11,719.59,2026-02-26
+428,USB Hub,West,8,922.48,2026-03-15
+429,Monitor,East,8,766.54,2026-08-17
+430,Docking Station,North,1,711.88,2026-05-17
+431,Docking Station,South,1,1074.14,2026-12-04
+432,Mouse,West,18,126.11,2026-12-23
+433,Docking Station,East,2,131.81,2026-09-03
+434,Monitor,South,7,471.04,2026-06-23
+435,Webcam,East,1,1077.31,2026-09-01
+436,Headset,West,12,118.18,2026-11-26
+437,Laptop,North,17,271.8,2026-04-21
+438,Docking Station,West,17,686.81,2026-09-10
+439,Monitor,East,10,451.61,2026-04-10
+440,Mouse,North,15,467.62,2026-07-09
+441,Monitor,North,3,1025.3,2026-08-19
+442,Mouse,South,20,552.39,2026-10-21
+443,Keyboard,East,2,998.97,2026-08-13
+444,Monitor,West,16,480.72,2026-04-08
+445,Docking Station,East,9,277.61,2026-12-02
+446,USB Hub,South,11,707.38,2026-01-20
+447,Webcam,West,5,62.07,2026-09-06
+448,USB Hub,West,14,24.78,2026-02-13
+449,Webcam,West,14,807.15,2026-09-19
+450,Headset,South,4,456.83,2026-04-27
+451,Docking Station,West,17,361.19,2026-11-02
+452,Mouse,South,4,752.26,2026-04-10
+453,Monitor,West,11,826.84,2026-06-20
+454,Laptop,South,12,654.88,2026-07-08
+455,Keyboard,East,18,501.38,2026-11-21
+456,Docking Station,South,9,738.45,2026-06-09
+457,Webcam,West,5,702.48,2026-07-25
+458,USB Hub,North,15,935.42,2026-06-13
+459,Mouse,West,18,537.01,2026-11-20
+460,Monitor,West,13,1158.11,2026-03-28
+461,Headset,North,8,47.89,2026-01-25
+462,Headset,South,9,1195.85,2026-07-21
+463,Webcam,North,11,855.88,2026-04-16
+464,USB Hub,West,17,686.63,2026-09-05
+465,Monitor,West,6,439.27,2026-10-14
+466,Keyboard,West,9,990.0,2026-04-12
+467,Docking Station,West,16,492.21,2026-03-17
+468,Docking Station,North,1,35.45,2026-07-11
+469,Monitor,South,4,1134.71,2026-02-12
+470,Webcam,South,1,733.91,2026-06-01
+471,Headset,West,3,1129.43,2026-02-19
+472,Laptop,North,11,738.22,2026-11-18
+473,Webcam,West,5,509.81,2026-05-28
+474,Mouse,West,18,1134.85,2026-07-17
+475,Laptop,South,12,922.92,2026-07-08
+476,USB Hub,North,14,473.03,2026-02-02
+477,Headset,North,14,660.84,2026-09-05
+478,Keyboard,West,15,1000.89,2026-07-25
+479,Headset,South,2,359.58,2026-03-07
+480,Headset,South,1,418.19,2026-08-13
+481,Headset,West,18,652.94,2026-06-07
+482,Mouse,South,10,426.45,2026-12-09
+483,USB Hub,North,12,386.65,2026-12-15
+484,Headset,East,11,1093.05,2026-08-18
+485,Headset,South,14,723.3,2026-01-03
+486,Webcam,South,10,257.76,2026-12-06
+487,Headset,West,5,486.94,2026-03-07
+488,Webcam,East,20,756.43,2026-07-27
+489,Monitor,East,11,618.44,2026-01-11
+490,Docking Station,North,4,403.13,2026-12-02
+491,Keyboard,South,8,874.56,2026-10-13
+492,USB Hub,North,20,481.88,2026-02-23
+493,Monitor,South,8,140.02,2026-06-24
+494,Headset,North,12,58.03,2026-08-28
+495,Mouse,North,8,598.26,2026-07-27
+496,Monitor,East,1,913.4,2026-06-15
+497,Laptop,West,1,238.53,2026-09-18
+498,Headset,North,12,942.55,2026-02-27
+499,Headset,North,19,685.28,2026-03-12
+500,Docking Station,East,18,220.85,2026-09-13
