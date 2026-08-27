@@ -16,7 +16,8 @@ steps:
     displayName: 'Install training dependencies'
 
   - script: |
-      cd mlops_ai_pipeline
+      ls -la $(Build.SourcesDirectory)
+      cd $(Build.SourcesDirectory)/mlops_ai_pipeline
       python3 train.py
     displayName: 'Train model'
 
@@ -27,7 +28,7 @@ steps:
     displayName: 'Azure login and configure ML defaults'
 
   - script: |
-      cd mlops_ai_pipeline
+      cd $(Build.SourcesDirectory)/mlops_ai_pipeline
       NEW_VERSION=$(Build.BuildId)
       echo "Registering model version: $NEW_VERSION"
       az ml model create \
@@ -38,7 +39,7 @@ steps:
     displayName: 'Register new model version'
 
   - script: |
-      cd mlops_ai_pipeline
+      cd $(Build.SourcesDirectory)/mlops_ai_pipeline
       NEW_VERSION=$(Build.BuildId)
       echo "Updating deployment to use model version: $NEW_VERSION"
       sed -i "s/model: azureml:iris-classifier:.*/model: azureml:iris-classifier:$NEW_VERSION/" deployment.yml
