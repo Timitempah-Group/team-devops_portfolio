@@ -1,0 +1,47 @@
+trigger:
+  branches:
+    include:
+      - main
+  paths:
+    include:
+      - mlops_ai_pipeline/*
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - script: |
+      python3 -m pip install --upgrade pip
+      pip install scikit-learn joblib
+    displayName: 'Install training dependencies'
+
+  - script: |
+      ls -la $(Build.SourcesDirectory)
+      cd $(Build.SourcesDirectory)/mlops_ai_pipeline
+      python3 train.py
+    displayName: 'Train model'
+
+  - script: |
+      az extension add --name ml --yes
+      az login --service-principal -u $(spnClientId) -p $(spnClientSecret) --tenant $(spnTenantId)
+      az configure --defaults group=rg-mlops-pipeline workspace=$(amlWorkspaceName)
+    displayName: 'Azure login and configure ML defaults'
+
+  - script: |
+      cd $(Build.SourcesDirectory)/mlops_ai_pipeline
+      NEW_VERSION=$(Build.BuildId)
+      echo "Registering model version: $NEW_VERSION"
+      az ml model create \
+        --name iris-classifier \
+        --version $NEW_VERSION \
+        --path outputs/model.pkl \
+        --type custom_model
+    displayName: 'Register new model version'
+
+  - script: |
+      cd $(Build.SourcesDirectory)/mlops_ai_pipeline
+      NEW_VERSION=$(Build.BuildId)
+      echo "Updating deployment to use model version: $NEW_VERSION"
+      sed -i "s/model: azureml:iris-classifier:.*/model: azureml:iris-classifier:$NEW_VERSION/" deployment.yml
+      az ml online-deployment update --file deployment.yml
+    displayName: 'Update deployment with new model version'
