@@ -1,0 +1,12 @@
+$schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
+name: iris-deployment
+endpoint_name: iris-endpoint
+model: azureml:iris-classifier:1
+code_configuration:
+  code: deploy_code
+  scoring_script: score.py
+environment:
+  conda_file: deploy_code/conda.yml
+  image: mcr.microsoft.com/azureml/openmpi4.1.0-ubuntu22.04
+instance_type: Standard_F2s_v2
+instance_count: 1
